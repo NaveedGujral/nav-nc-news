@@ -2,11 +2,11 @@ import axios from 'axios';
 import ArticleCard from './ArticleCard';
 import { useEffect, useState } from 'react';
 import getArticles from '../utils/getArticles';
-const URLpath = "https://ng-news.onrender.com/api/articles"
 
 const ListAllArticles = () => {
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const [isError, setIsError] = useState("")
 
     useEffect(() => {
         getArticles()
@@ -14,16 +14,30 @@ const ListAllArticles = () => {
             setArticles(articles)
             setIsLoading(false)
         })
+        .catch((err) => {
+            setIsLoading(false)
+            setIsError("404 error")
+        })
     }, [])
 
     if (isLoading) {
         return (
-        <div>
-            <p>
+        <div className='LoadingScreen'>
+            <h2>
                 loading articles...
-            </p>
+            </h2>
         </div>
         )
+    }
+    
+    if (isError) {
+        return (
+        <div className='LoadingScreen'>
+            <h2>
+                {isError}
+            </h2>
+        </div>
+        ) 
     }
     
     else {
