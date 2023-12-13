@@ -1,21 +1,21 @@
-import ArticleCard from './ArticleCard';
+import axios from 'axios';
 import { useEffect, useState } from 'react';
-import getArticles from '../utils/getArticles';
+import getSingleArticle from '../utils/getSingleArticle';
 
-const ListAllArticles = () => {
-    const [articles, setArticles] = useState([])
+const Article = () => {
+    const [article, setArticle] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [isError, setIsError] = useState("")
 
     useEffect(() => {
-        getArticles()
-        .then((articles) => {
-            setArticles(articles)
+        getSingleArticle()
+        .then((article) => {
+            setArticle(article)
             setIsLoading(false)
         })
         .catch((err) => {
             setIsLoading(false)
-            setIsError("could not retrieve articles")
+            setIsError("could not retrieve article")
         })
     }, [])
 
@@ -23,7 +23,7 @@ const ListAllArticles = () => {
         return (
         <div className='LoadingScreen'>
             <h2>
-                loading articles...
+                loading article...
             </h2>
         </div>
         )
@@ -41,13 +41,10 @@ const ListAllArticles = () => {
     
     else {
         return (
-        <ul className="ArticleList">
-            { articles.map((article) => {
-                    return <ArticleCard articleObj={article} key={article.article_id}/>
-                })}
+        <ul className="ArticleDisplay">
         </ul>
         )
     }
 }
 
-export default ListAllArticles
+export default Article

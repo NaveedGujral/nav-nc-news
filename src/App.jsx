@@ -4,6 +4,7 @@ import './App.css'
 import Header from './components/Header';
 import Filter from './components/Filter';
 import ListAllArticles from './components/ListAllArticles';
+import Article from './components/Article';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <div className='DisplayPane'>
         <Routes>
           <Route path="/" element={<ListAllArticles/>}/>
+          <Route path="/api/articles/:article_id" element={<Article/>}/>
         </Routes>
         </div>
       </div>

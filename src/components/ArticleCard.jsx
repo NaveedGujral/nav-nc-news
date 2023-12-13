@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom"
+
 const ArticleCard = (props) => {
     const { articleObj } = props
     const { article_img_url, article_id, title, author, created_at, votes, comment_count } =  articleObj 
 
     return (
         <div className="ArticleCard">
+            <Link className="ArtLink" to={`https://ng-news.onrender.com/api/articles/${article_id}`}>
             <img src={article_img_url} alt="test"/>
                <div className="CardBanner">
                     <h2>
@@ -22,6 +25,7 @@ const ArticleCard = (props) => {
                         {votes} Votes
                     </h3>
                 </div> 
+            </Link>
         </div>
     )
 }
