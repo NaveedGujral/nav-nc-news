@@ -45,6 +45,9 @@ const Article = () => {
         <div className="ArticleDisplay">
             <h1>{article.title}</h1>
             <img src={article.article_img_url} alt={`${article.title}`}/>
+            <p>
+                {article.body}
+            </p>
             <div className='ArticleMeta'>
                 <h2>
                     {article.author}
@@ -56,9 +59,6 @@ const Article = () => {
                     {article.votes} Votes
                 </h2>
             </div>
-            <p>
-                {article.body}
-            </p>
         </div>
         )
     }
