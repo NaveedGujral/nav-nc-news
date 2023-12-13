@@ -16,7 +16,7 @@ const ListAllArticles = () => {
         })
         .catch((err) => {
             setIsLoading(false)
-            setIsError("404 error")
+            setIsError("could not retrieve articles")
         })
     }, [])
 
