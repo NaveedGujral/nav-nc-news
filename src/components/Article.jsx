@@ -1,14 +1,15 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom'
 import getSingleArticle from '../utils/getSingleArticle';
 
 const Article = () => {
     const [article, setArticle] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [isError, setIsError] = useState("")
+    const {article_id} = useParams()
 
     useEffect(() => {
-        getSingleArticle()
+        getSingleArticle(article_id)
         .then((article) => {
             setArticle(article)
             setIsLoading(false)
@@ -41,10 +42,30 @@ const Article = () => {
     
     else {
         return (
-        <ul className="ArticleDisplay">
-        </ul>
+        <div className="ArticleDisplay">
+            <h1>{article.title}</h1>
+            <img src={article.article_img_url} alt={`${article.title}`}/>
+            <div className='ArticleMeta'>
+                <h2>
+                    {article.author}
+                </h2>
+                <h2>
+                    {article.created_at.substring(0, 10)}
+                </h2>
+                <h2>
+                    {article.votes} Votes
+                </h2>
+            </div>
+            <p>
+                {article.body}
+            </p>
+        </div>
         )
     }
 }
 
 export default Article
+
+{/* <h2>
+    {article.comment_count} Comments
+</h2> */}

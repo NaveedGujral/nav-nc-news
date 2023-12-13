@@ -7,6 +7,7 @@ const getSingleArticle = (artId) => {
         .get(URLpath)
         .then((response) => {
             const { article } = response.data
+            console.log(article)
             return article
     })
 }
