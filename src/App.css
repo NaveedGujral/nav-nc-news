@@ -150,7 +150,6 @@ p {
 }
 
 .ArticleCardMeta h3 {
-    /* padding-right: 7.2%; */
     display: flex;
     color: grey;
 }
@@ -182,11 +181,11 @@ p {
     padding-left: 11%;
 }
 
-.ArticleDisplay p {
+.ArtBody {
     display: flex;
     padding-top: 1.2%;
     padding-bottom: 3.6%;
-    padding-right: 3.6%;
+    padding-right: 7.2%;
     padding-left: 11%;
 }
 
@@ -218,6 +217,52 @@ p {
     top:11%; 
     left:0;
     z-index: 4;
+    display: flex;
 }
 
+.BackButton p {
+    color: white;
+    z-index: 5;
+    transform: rotate(-90deg);
+    transform-origin: 0, 0;
+}
+
+.CommentSection {
+    display: flex;
+    padding-left: 11%;
+    padding-right: 7.2%;
+    padding-bottom: 11%;
+    flex-direction: column;
+    background-color: rgb(50, 50, 50);
+    color: rgb(255, 255, 255);
+    width:100%;
+}
+
+.CommentList {
+    padding-left: 0%;
+}
+
+.CommentCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.CommentCardMeta {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    background-color: grey;
+    border-radius: .5px;
+    border: 1.5px solid grey;
+    margin: 1em 0;
+    padding: 0;
+    opacity: 25%;
+}
 
