@@ -210,5 +210,14 @@ p {
     width: 100%;
 }
 
+.BackButton {
+    background-color: green;
+    width:7.2%;
+    height:100%; 
+    position:fixed;
+    top:11%; 
+    left:0;
+    z-index: 4;
+}
 
 

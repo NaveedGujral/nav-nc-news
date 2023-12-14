@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import getSingleArticle from '../utils/getSingleArticle';
 
 const Article = () => {
@@ -43,6 +43,8 @@ const Article = () => {
     else {
         return (
         <div className="ArticleDisplay">
+            <Link className='BackButton' to={"/"}/>
+            <Link/>
             <h1>{article.title}</h1>
             <img src={article.article_img_url} alt={`${article.title}`}/>
             <p>
@@ -53,7 +55,7 @@ const Article = () => {
                     {article.author}
                 </h2>
                 <h2>
-                    {article.created_at.substring(0, 10)}
+                {article.created_at.substring(8, 10)}/{article.created_at.substring(5, 7)}/{article.created_at.substring(0, 4)}
                 </h2>
                 <h2>
                     {article.votes} Votes
@@ -65,7 +67,3 @@ const Article = () => {
 }
 
 export default Article
-
-{/* <h2>
-    {article.comment_count} Comments
-</h2> */}

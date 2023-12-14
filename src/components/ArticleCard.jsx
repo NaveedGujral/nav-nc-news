@@ -17,7 +17,7 @@ const ArticleCard = (props) => {
                                 {author}
                             </h3>
                             <h3>
-                                {created_at.substring(0, 10)}
+                            {created_at.substring(8, 10)}/{created_at.substring(5, 7)}/{created_at.substring(0, 4)}
                             </h3>
                             <h3>
                                 {comment_count} Comments
