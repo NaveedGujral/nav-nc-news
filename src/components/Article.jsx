@@ -45,7 +45,6 @@ const Article = () => {
         return (
         <div className="ArticleDisplay">
             <Link className='BackButton' to={"/"}>
-            <p>Back</p>
             </Link>
             <h1>{article.title}</h1>
             <img src={article.article_img_url} alt={`${article.title}`}/>
