@@ -5,7 +5,6 @@ const getComments = (artId) => {
     return axios
     .get(URLpath)
     .then((response) => {
-            console.log(response.data)
             const { comments } = response.data
             return comments
     })

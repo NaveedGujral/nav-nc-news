@@ -185,21 +185,20 @@ p {
     display: flex;
     padding-top: 1.2%;
     padding-bottom: 3.6%;
-    padding-right: 7.2%;
+    padding-right: 3.6%;
     padding-left: 11%;
 }
 
 .ArticleMeta {
     display: flex;
-    padding-left: 7.2%;
+    padding-left: 11%;
+    padding-right: 3.6%;
     padding-bottom: 0%;
     width: 100vw;
     justify-content: space-between;
 }
 
 .ArticleMeta h2 {
-    padding-right: 3.6%;
-    padding-left: 3.6%;
     padding-bottom: 3.6%;
     padding-top: 0%;
     color: grey;
@@ -230,7 +229,7 @@ p {
 .CommentSection {
     display: flex;
     padding-left: 11%;
-    padding-right: 7.2%;
+    padding-right: 3.6%;
     padding-bottom: 11%;
     flex-direction: column;
     background-color: rgb(50, 50, 50);
