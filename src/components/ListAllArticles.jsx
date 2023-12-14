@@ -1,4 +1,3 @@
-import axios from 'axios';
 import ArticleCard from './ArticleCard';
 import { useEffect, useState } from 'react';
 import getArticles from '../utils/getArticles';
@@ -52,5 +51,3 @@ const ListAllArticles = () => {
 }
 
 export default ListAllArticles
-
-axios.get()
