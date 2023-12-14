@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom'
 import getSingleArticle from '../utils/getSingleArticle';
+import ListArticleComments from './ListArticleComments'
 
 const Article = () => {
     const [article, setArticle] = useState([])
@@ -43,11 +44,11 @@ const Article = () => {
     else {
         return (
         <div className="ArticleDisplay">
-            <Link className='BackButton' to={"/"}/>
-            <Link/>
+            <Link className='BackButton' to={"/"}>
+            </Link>
             <h1>{article.title}</h1>
             <img src={article.article_img_url} alt={`${article.title}`}/>
-            <p>
+            <p className='ArtBody'>
                 {article.body}
             </p>
             <div className='ArticleMeta'>
@@ -60,6 +61,10 @@ const Article = () => {
                 <h2>
                     {article.votes} Votes
                 </h2>
+            </div>
+            <div className='CommentSection'>
+                <h2>{article.comment_count} Comments</h2>
+                <ListArticleComments article_id={article_id}/>
             </div>
         </div>
         )

@@ -64,8 +64,7 @@ p {
     position:relative;
     margin-top: 13.2%;
     right: 0;
-    /* background-color: rgb(26, 26, 26); */
-    justify-content: center;
+    justify-content: flex-end;
     height: 100%;
     width: 100%;
     overflow: scroll;
@@ -82,9 +81,12 @@ p {
 }
 
 .LoadingScreen {
-    position:relative;
+    position: relative;
     margin-top: 13.2%;
-    display:flex;
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .LoadingScreen h2 {
@@ -109,7 +111,7 @@ p {
 }
 
 .ArticleCard img {
-    width: 100%;
+    max-width: 100%;
     height: 100%;
     z-index: 0;
 }
@@ -133,6 +135,8 @@ p {
     color: white;
     z-index: 2;
     padding: 7.2%;
+    padding-left: 11%;
+    padding-right: 3.6%;
     width: fit-content;
     align-content: flex-start;
     align-items: flex-start;
@@ -141,7 +145,7 @@ p {
 
 .ArticleCardMeta {
     display: flex;
-    padding-left: 7.2%;
+    padding-left: 11%;
     width: 80vw;
     flex-wrap: wrap;
     flex-direction: row;
@@ -150,7 +154,6 @@ p {
 }
 
 .ArticleCardMeta h3 {
-    /* padding-right: 7.2%; */
     display: flex;
     color: grey;
 }
@@ -182,7 +185,7 @@ p {
     padding-left: 11%;
 }
 
-.ArticleDisplay p {
+.ArtBody {
     display: flex;
     padding-top: 1.2%;
     padding-bottom: 3.6%;
@@ -192,15 +195,14 @@ p {
 
 .ArticleMeta {
     display: flex;
-    padding-left: 7.2%;
+    padding-left: 11%;
+    padding-right: 3.6%;
     padding-bottom: 0%;
     width: 100vw;
     justify-content: space-between;
 }
 
 .ArticleMeta h2 {
-    padding-right: 3.6%;
-    padding-left: 3.6%;
     padding-bottom: 3.6%;
     padding-top: 0%;
     color: grey;
@@ -218,6 +220,52 @@ p {
     top:11%; 
     left:0;
     z-index: 4;
+    display: flex;
 }
 
+.BackButton p {
+    color: white;
+    z-index: 5;
+    transform: rotate(-90deg);
+    transform-origin: 0, 0;
+}
+
+.CommentSection {
+    display: flex;
+    padding-left: 11%;
+    padding-right: 3.6%;
+    padding-bottom: 11%;
+    flex-direction: column;
+    background-color: rgb(50, 50, 50);
+    color: rgb(255, 255, 255);
+    width:100%;
+}
+
+.CommentList {
+    padding-left: 0%;
+}
+
+.CommentCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.CommentCardMeta {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    background-color: grey;
+    border-radius: .5px;
+    border: 1.5px solid grey;
+    margin: 1em 0;
+    padding: 0;
+    opacity: 25%;
+}
 
