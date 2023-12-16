@@ -3,6 +3,8 @@ import { useParams, Link } from 'react-router-dom'
 import getSingleArticle from '../utils/getSingleArticle';
 import ListArticleComments from './ListArticleComments'
 
+import ArticleVoter from './ArticleVoter';
+
 const Article = () => {
     const [article, setArticle] = useState([])
     const [isLoading, setIsLoading] = useState(true)
@@ -47,7 +49,10 @@ const Article = () => {
             <Link className='BackButton' to={"/"}>
             </Link>
             <h1>{article.title}</h1>
-            <img src={article.article_img_url} alt={`${article.title}`}/>
+            <img src={article.article_img_url} alt={`${article.title}`} className='ArticleDisplayImage'/>
+            
+            <ArticleVoter articleObj={article}/>
+            
             <p className='ArtBody'>
                 {article.body}
             </p>
@@ -57,9 +62,6 @@ const Article = () => {
                 </h2>
                 <h2>
                 {article.created_at.substring(8, 10)}/{article.created_at.substring(5, 7)}/{article.created_at.substring(0, 4)}
-                </h2>
-                <h2>
-                    {article.votes} Votes
                 </h2>
             </div>
             <div className='CommentSection'>
