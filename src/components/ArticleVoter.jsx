@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import VoteUpInc from '/home/naveed/northcoders/frontend/nav-nc-news/src/assets/VoteUpInc.svg'
 import VoteUpIncClicked from '/home/naveed/northcoders/frontend/nav-nc-news/src/assets/VoteUpInc-Clicked.svg'
@@ -14,18 +14,28 @@ const ArticleVoter = (props) => {
     const [votesCounter, setVotesCounter] = useState(0)
     const [voteUpIconState, setVoteUpIconState] = useState(VoteUpInc)
     const [voteDownIconState, setVoteDownIconState] = useState(VoteDownInc)
+    const [isError, setIsError] = useState(null)
     
     const vote = (voteInc) => {
-        if (votesCounter === 0) {
+        if (votesCounter < 1) {
+            patchArticleVote(article_id, voteInc)
+            .catch((err) => {
+                setIsError("Error: " + err.message)
+                
+                if (voteInc === 1) {
+                setCurrVotes(currVotes)
+                setVoteUpIconState(VoteUpInc)
+                }
+                
+                if (voteInc === -1) {    
+                setCurrVotes(currVotes)
+                setVoteDownIconState(VoteDownInc)
+                }
+            })
+            
             setCurrVotes(currVotes + voteInc)
             setVotesCounter(votesCounter + 1)
-            
-            const newVoteObj = {
-                inc_votes : voteInc
-           }
-
-            patchArticleVote(article_id, newVoteObj)
-            
+                    
             if (voteInc === 1) {
                 setVoteUpIconState(VoteUpIncClicked)
             }
@@ -37,17 +47,21 @@ const ArticleVoter = (props) => {
 
     return (
         <div className='VoteBlock'>
+            <h3>
+                {isError}
+            </h3>
             <button className='VoteButton' onClick={() => vote(1)}> 
                 <img src={voteUpIconState} className='VoteIcon'/>
             </button>
             <button className='VoteButton' onClick={() => vote(-1)}> 
                 <img src={voteDownIconState} className='VoteIcon'/>
             </button>
-                <h2>
-                    {currVotes} Votes
-                </h2>
-            </div>
+            <h2>
+                {currVotes} Votes
+            </h2>
+        </div>
     )
 }
+
 
 export default ArticleVoter
