@@ -47,9 +47,6 @@ const ArticleVoter = (props) => {
 
     return (
         <div className='VoteBlock'>
-            <h3>
-                {isError}
-            </h3>
             <button className='VoteButton' onClick={() => vote(1)}> 
                 <img src={voteUpIconState} className='VoteIcon'/>
             </button>
@@ -59,6 +56,9 @@ const ArticleVoter = (props) => {
             <h2>
                 {currVotes} Votes
             </h2>
+            <h3>
+                {isError}
+            </h3>
         </div>
     )
 }

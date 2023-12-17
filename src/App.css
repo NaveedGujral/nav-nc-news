@@ -219,8 +219,9 @@ p {
     max-width: 100%;
     width: 100%;
     color: grey;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-end;
+    flex-wrap: wrap;
 }
 
 .VoteBlock h2 {
@@ -233,6 +234,7 @@ p {
 
 .VoteBlock h3 {
     margin:0;
+    margin-top:3.6%;
     margin-bottom:1.2%;
 }
 
