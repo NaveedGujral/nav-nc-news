@@ -1,5 +1,4 @@
 import axios from "axios"
-import { useState } from "react"
 
 const patchArticleVote = (artId, voteInc) => {
     const URLpath = `https://ng-news.onrender.com/api/articles/${artId}`
