@@ -29,7 +29,7 @@ const ListAllArticles = () => {
         )
     }
     
-    if (isError) {
+    else if (isError) {
         return (
         <div className='LoadingScreen'>
             <h2>
@@ -42,9 +42,11 @@ const ListAllArticles = () => {
     else {
         return (
         <ul className="ArticleList">
+
             { articles.map((article) => {
                     return <ArticleCard articleObj={article} key={article.article_id}/>
                 })}
+            
         </ul>
         )
     }

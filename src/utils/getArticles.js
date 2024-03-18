@@ -9,8 +9,12 @@ const getArticles = () => {
     return axios
         .get(URLpath)
         .then((response) => {
+            console.log(response)
             const { articles } = response.data
             return articles
+    })
+    .catch((error) => {
+        console.log(error)
     })
 }
 

@@ -1,9 +1,16 @@
+
+
 #root {
     font-size: 2vw;
+    font-family: 'Josefin Sans Thin', serif;
+    --nncblack: #04080f;
+    --nncgray: #727575;
+    --nncwhite: #e0e2db;
+    --nncblue: #587792;
 }
 
 body {
-    background-color: rgb(26, 26, 26);
+    background-color: var(--nncwhite);
     margin:0 auto;
 }
 
@@ -33,7 +40,7 @@ p {
     border: 0;
     top:0; 
     left:0;
-    background-color:red;
+    background-color:var(--nncblue);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,7 +51,7 @@ p {
     text-align: center;
     border: 0;
     margin:0;
-    color: white;
+    color: var(--nncwhite);
 }
 
 .Filter {
@@ -67,7 +74,7 @@ p {
     justify-content: flex-end;
     height: 100%;
     width: 100%;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .DisplayPane ul {
@@ -86,6 +93,7 @@ p {
     width: 100vw;
     justify-content: center;
     align-items: flex-start;
+    overflow: hidden;
 }
 
 .LoadingScreen h2 {
@@ -99,7 +107,9 @@ p {
 .ArticleList {
     margin-top: 11%;
     margin-bottom: 3.6%;
+  
 }
+
 
 .ArticleCard {
     display: flex;
@@ -190,6 +200,7 @@ p {
     padding-bottom: 3.6%;
     padding-right: 3.6%;
     padding-left: 11%;
+    color: var(--nncgray);
 }
 
 .ArticleMeta {
@@ -255,32 +266,14 @@ p {
     z-index: 2;
 }
 
-.BackButton {
-    background-color: green;
-    width:7.2%;
-    height:100%; 
-    position:fixed;
-    top:11%; 
-    left:0;
-    z-index: 4;
-    display: flex;
-}
-
-.BackButton p {
-    color: white;
-    z-index: 5;
-    transform: rotate(-90deg);
-    transform-origin: 0, 0;
-}
-
 .CommentSection {
     display: flex;
     padding-left: 11%;
     padding-right: 3.6%;
     padding-bottom: 11%;
     flex-direction: column;
-    background-color: rgb(50, 50, 50);
-    color: rgb(255, 255, 255);
+    background-color: var(--nncblack);
+    color: var(--nncwhite);
     width:100%;
 }
 

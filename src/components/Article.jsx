@@ -46,16 +46,16 @@ const Article = () => {
     else {
         return (
         <div className="ArticleDisplay">
-            <Link className='BackButton' to={"/"}>
-            </Link>
+            {/* <Link className='BackButton' to={"/"}>
+            </Link> */}
             <h1>{article.title}</h1>
             <img src={article.article_img_url} alt={`${article.title}`} className='ArticleDisplayImage'/>
             
             <ArticleVoter articleObj={article}/>
             
-            <p className='ArtBody'>
+            <h3 className='ArtBody'>
                 {article.body}
-            </p>
+            </h3>
             <div className='ArticleMeta'>
                 <h2>
                     {article.author}
