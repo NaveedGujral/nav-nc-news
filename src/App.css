@@ -1,306 +1,356 @@
-
-
 #root {
-    font-size: 2vw;
-    font-family: 'Josefin Sans Thin', serif;
-    --nncblack: #04080f;
-    --nncgray: #727575;
-    --nncwhite: #e0e2db;
-    --nncblue: #587792;
+  font-size: 2vw;
+  font-family: "Josefin Sans Thin", serif;
+  --nncblack: #04080f;
+  --nncgray: #727575;
+  --nncwhite: #e0e2db;
+  --nncblue: #587792;
 }
 
 body {
-    background-color: var(--nncwhite);
-    margin:0 auto;
+  background-color: var(--nncblack);
+  margin: 0 auto;
 }
 
 h1 {
-    font-family: 'Josefin Sans Light', serif;
-    font-size: 1.5rem;
+  font-family: "Josefin Sans Light", serif;
+  font-size: 1.5rem;
 }
 
 h2 {
-    font-family: 'Josefin Sans Thin', serif;
-    font-size: 1.25rem;
+  font-family: "Josefin Sans Thin", serif;
+  font-size: 1.25rem;
 }
 h3 {
-    font-family: 'Josefin Sans Thin', serif;
-    font-size: 1rem;
+  font-family: "Josefin Sans Thin", serif;
+  font-size: 1rem;
 }
 
 p {
-    font-family: 'Josefin Sans Thin', serif;
-    font-size: 1rem;
+  font-family: "Josefin Sans Thin", serif;
+  font-size: 1rem;
 }
 
 .Header {
-    position:fixed;
-    width:100%;
-    height:11%; 
-    border: 0;
-    top:0; 
-    left:0;
-    background-color:var(--nncblue);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 3;
+  position: fixed;
+  width: 100%;
+  height: 10.66%;
+  border: 0;
+  top: 0;
+  left: 0;
+  background-color: var(--nncblue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
 }
 
 .Header h1 {
-    text-align: center;
-    border: 0;
-    margin:0;
-    color: var(--nncwhite);
+  text-align: center;
+  border: 0;
+  margin: 0;
+  color: var(--nncwhite);
 }
 
 .Filter {
-    width:7.2%;
-    height:100%; 
-    position:fixed;
-    top:11%; 
-    left:0;
-    background-color:blue;
-    text-align: center;
-    color: white;
-    z-index: 3;
+  width: 7.2%;
+  height: 100%;
+  position: fixed;
+  top: 11%;
+  left: 0;
+  background-color: blue;
+  text-align: center;
+  color: white;
+  z-index: 3;
 }
 
 .DisplayPane {
-    display:flex;
-    position:relative;
-    margin-top: 13.2%;
-    right: 0;
-    justify-content: flex-end;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-}
-
-.DisplayPane ul {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: stretch;
+  display: flex;
+  position: absolute;
+  background-color: var(--nncwhite);
+  bottom: 0;
+  right: 0;
+  justify-content: flex-end;
+  height: 89.33%;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 1.12%;
 }
 
 .LoadingScreen {
-    position: relative;
-    margin-top: 13.2%;
-    display: flex;
-    width: 100vw;
-    justify-content: center;
-    align-items: flex-start;
-    overflow: hidden;
+  position: relative;
+  margin-top: 13.2%;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
 }
 
 .LoadingScreen h2 {
-    display:flex;
-    margin-top: 11%;
-    margin-bottom: 3.6%;
-    height:100%;
-    color: white;
+  display: flex;
+  margin-top: 11%;
+  margin-bottom: 3.6%;
+  height: 100%;
+  color: white;
 }
 
 .ArticleList {
-    margin-top: 11%;
-    margin-bottom: 3.6%;
-  
+  width: 100%;
+  height: 100%;
+  margin-bottom: 1.12%;
 }
 
+* {
+  box-sizing: border-box;
+}
 
+.row {
+  height: 40%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Create three equal columns that floats next to each other */
 .ArticleCard {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    margin-top: 3.6%;
-}
-
-.ArticleCard img {
-    max-width: 100%;
-    height: 100%;
-    z-index: 0;
+  display: flex;
+  float: left;
+  width: 25%;
+  padding: 1.12%;
+  height: 100%;
+  /* width: 25%; */
+  width: 33.33%;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: red;
 }
 
 .CardBanner {
-    display: flex;
-    position: absolute;
-    width: 100%;
-    height: 1%;
-    background-color: rgb(26, 26, 26);
-    color: white;
-    align-items: flex-start;
-    flex-direction: column-reverse;
-    justify-content: flex-start;
+  display: flex;
+  position: absolute;
+  width: 30.4%;
+  height: 14.43%;
+  background-color: rgb(4 8 15 / 60%);
+  backdrop-filter: blur(20px);
+  color: white;
 }
 
-.ArticleCard h2 {
-    display: flex;
-    position: absolute;
-    left: 0%;
-    color: white;
-    z-index: 2;
-    padding: 7.2%;
-    padding-left: 11%;
-    padding-right: 3.6%;
-    width: fit-content;
-    align-content: flex-start;
-    align-items: flex-start;
-    flex-wrap: wrap;
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1366px) {
+  .ArticleCard {
+    width: 33.33%;
+  }
+  .CardBanner {
+    width: 30.4%;
+  }
+  h1 {
+    font-family: "Josefin Sans Light", serif;
+    font-size: 1.25rem;
+  }
+  
+  h2 {
+    font-family: "Josefin Sans Thin", serif;
+    font-size: 1rem;
+  }
+  h3 {
+    font-family: "Josefin Sans Thin", serif;
+    font-size: .75rem;
+  }
+  
+  p {
+    font-family: "Josefin Sans Thin", serif;
+    font-size: .75rem;
+  }
+}
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 768px) {
+  .ArticleCard {
+    width: 100%;
+  }
+  .CardBanner {
+    width: 95.52%;
+  }
+}
+
+.ArticleCard img {
+  /* min-width: 100%; */
+  width: 100%;
+  height: 100%;
+  /* min-height: 100%; */
+  /* height: auto; */
+  z-index: 0;
+  justify-content: center;
+  object-fit: cover;
+}
+
+.CardBanner h2 {
+  display: flex;
+  position: absolute;
+  left: 0%;
+  padding-left: 3.34%;
+  padding-right: 3.34%;
+  color: white;
+  z-index: 2;
 }
 
 .ArticleCardMeta {
-    display: flex;
-    padding-left: 11%;
-    width: 80vw;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: flex-end;
+  display: flex;
+  padding-left: 3.34%;
+  padding-right: 3.34%;
+  left: 0%;
+  width: 100%;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: flex-end;
 }
 
 .ArticleCardMeta h3 {
-    display: flex;
-    color: grey;
+  display: flex;
+  color: grey;
 }
 
 .ArtLink {
-    display:contents;
-    width: 100%;
-    height: 100%;
+  display: contents;
+  width: 100%;
+  height: 100%;
 }
 
 .ArticleDisplay {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 100vw;
-    margin-top: 11%;
-    margin-bottom: 3.6%;
-    height: 100%;
-    color: white;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100vw;
+  margin-top: 11%;
+  margin-bottom: 3.6%;
+  height: 100%;
+  color: white;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .ArticleDisplay h1 {
-    padding-top: 3.6%;
-    padding-bottom: 3.6%;
-    padding-right: 3.6%;
-    padding-left: 11%;
+  padding-top: 3.6%;
+  padding-bottom: 3.6%;
+  padding-right: 3.6%;
+  padding-left: 11%;
 }
 
 .ArtBody {
-    display: flex;
-    padding-top: 1.2%;
-    padding-bottom: 3.6%;
-    padding-right: 3.6%;
-    padding-left: 11%;
-    color: var(--nncgray);
+  display: flex;
+  padding-top: 1.2%;
+  padding-bottom: 3.6%;
+  padding-right: 3.6%;
+  padding-left: 11%;
+  color: var(--nncgray);
 }
 
 .ArticleMeta {
-    display: flex;
-    padding-left: 11%;
-    padding-right: 3.6%;
-    padding-bottom: 0%;
-    width: 100vw;
-    justify-content: space-between;
+  display: flex;
+  padding-left: 11%;
+  padding-right: 3.6%;
+  padding-bottom: 0%;
+  width: 100vw;
+  justify-content: space-between;
 }
 
 .ArticleMeta h2 {
-    padding-bottom: 3.6%;
-    padding-top: 0%;
-    color: grey;
+  padding-bottom: 3.6%;
+  padding-top: 0%;
+  color: grey;
 }
 
 .ArticleDisplayImage {
-    width: 100%;
+  width: 100%;
 }
 
 .VoteBlock {
-    display: flex;
-    padding-top: 3.6%;
-    padding-left: 11%;
-    padding-right: 3.6%;
-    max-width: 100%;
-    width: 100%;
-    color: grey;
-    flex-direction: row;
-    align-items: flex-end;
-    flex-wrap: wrap;
+  display: flex;
+  padding-top: 3.6%;
+  padding-left: 11%;
+  padding-right: 3.6%;
+  max-width: 100%;
+  width: 100%;
+  color: grey;
+  flex-direction: row;
+  align-items: flex-end;
+  flex-wrap: wrap;
 }
 
 .VoteBlock h2 {
-    padding:0;
-    margin-top:2.4%;
-    margin-left: 2.4%;
-    margin-right: 2.4%;
-    margin-bottom:0%;
+  padding: 0;
+  margin-top: 2.4%;
+  margin-left: 2.4%;
+  margin-right: 2.4%;
+  margin-bottom: 0%;
 }
 
 .VoteBlock h3 {
-    margin:0;
-    margin-top:3.6%;
-    margin-bottom:1.2%;
+  margin: 0;
+  margin-top: 3.6%;
+  margin-bottom: 1.2%;
 }
 
 .VoteButton {
-    display: flex;
-    width: 1.25rem;
-    height: 1.25rem;
-    border: transparent;
-    background-color: transparent;
-    align-items: center;
-    padding:0;
+  display: flex;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: transparent;
+  background-color: transparent;
+  align-items: center;
+  padding: 0;
 }
 
 .VoteIcon {
-    width:100%;
-    height:100%;
-    padding:0;
-    z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  z-index: 2;
 }
 
 .CommentSection {
-    display: flex;
-    padding-left: 11%;
-    padding-right: 3.6%;
-    padding-bottom: 11%;
-    flex-direction: column;
-    background-color: var(--nncblack);
-    color: var(--nncwhite);
-    width:100%;
+  display: flex;
+  padding-left: 11%;
+  padding-right: 3.6%;
+  padding-bottom: 11%;
+  flex-direction: column;
+  background-color: var(--nncblack);
+  color: var(--nncwhite);
+  width: 100%;
 }
 
 .CommentList {
-    padding-left: 0%;
+  padding-left: 0%;
 }
 
 .CommentCard {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
 }
 
 .CommentCardMeta {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 hr {
-    display: block;
-    height: 1px;
-    background-color: grey;
-    border-radius: .5px;
-    border: 1.5px solid grey;
-    margin: 1em 0;
-    padding: 0;
-    opacity: 25%;
+  display: block;
+  height: 1px;
+  background-color: grey;
+  border-radius: 0.5px;
+  border: 1.5px solid grey;
+  margin: 1em 0;
+  padding: 0;
+  opacity: 25%;
 }
