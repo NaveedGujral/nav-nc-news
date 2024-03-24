@@ -15,8 +15,7 @@ const ArticleCard = (props) => {
   return (
     <div className="ArticleCard">
       <Link className="ArtLink" to={`/api/articles/${article_id}`}>
-        
-          <img src={article_img_url} alt={`${title}`} />
+        <img src={article_img_url} alt={`${title}`} />
 
         <div className="CardBanner">
           <h2>{title}</h2>
@@ -26,11 +25,9 @@ const ArticleCard = (props) => {
               {created_at.substring(8, 10)}/{created_at.substring(5, 7)}/
               {created_at.substring(0, 4)}
             </h3>
-            <h3>{comment_count} Comments</h3>
             <h3>{votes} Votes</h3>
           </div>
         </div>
-
       </Link>
     </div>
   );
