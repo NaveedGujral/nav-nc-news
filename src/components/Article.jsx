@@ -46,7 +46,15 @@ const Article = () => {
             alt={`${article.title}`}
             className="ArticleDisplayImage"
           />
-          <div style={{ display:"flex", flex: 1, flexDirection:"column", justifyContent:"flex-start", height: "100%" }}>
+          <div
+            style={{
+              display: "flex",
+              flex: 1,
+              flexDirection: "column",
+              justifyContent: "flex-start",
+              height: "100%",
+            }}
+          >
             <h1 style={{ padding: "5%" }}>{article.title}</h1>
             <div className="ArticleMeta">
               <h2>{article.author}</h2>
@@ -58,9 +66,10 @@ const Article = () => {
             </div>
           </div>
         </div>
-
-        <ArticleVoter articleObj={article} />
-        <h2 className="ArtBody">{article.body}</h2>
+        <div style={{display:"flex", flexDirection:"column"}}>
+          <ArticleVoter articleObj={article} />
+          <h2 className="ArtBody">{article.body}</h2>
+        </div>
         <div className="CommentSection">
           <h2>{article.comment_count} Comments</h2>
           <ListArticleComments article_id={article_id} />

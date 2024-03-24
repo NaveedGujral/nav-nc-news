@@ -223,6 +223,7 @@ p {
 
 .ArtBody {
   display: flex;
+  flex: 8;
   padding-top: 3.33%;
   padding-bottom: 3.33%;
   padding-right: 22%;
@@ -251,6 +252,7 @@ p {
 
 .VoteBlock {
   display: flex;
+  flex: 1;
   padding-right: 1.2%;
   max-width: 100%;
   width: 100%;
